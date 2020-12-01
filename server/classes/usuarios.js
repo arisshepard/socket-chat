@@ -24,6 +24,14 @@ class Usuarios {
 		return this.personas.filter((persona) => persona.sala === sala);
 	}
 
+	getPersonasPorSalaNombre(sala, nombre) {
+		return this.personas.filter(
+			(persona) =>
+				persona.sala === sala &&
+				persona.nombre.toUpperCase().includes(nombre.toUpperCase())
+		);
+	}
+
 	borrarPersona(id) {
 		let personaBorrada = this.getPersona(id);
 
